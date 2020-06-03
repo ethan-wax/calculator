@@ -14,19 +14,23 @@ function multiply(a, b){
 
 
 function divide(a, b){
-    return a / b;
+    if (b == 0) {
+        display.textContent = 'ERROR: DIVIDE BY ZERO';
+        return;
+    }
+    return a/b;
 };
 
 
 function operate(a, b, op){
     if (op == '+'){
-        add(a,b);
+        return add(a,b);
     } else if (op == '-'){
-        subtract(a,b);
+        return subtract(a,b);
     } else if (op == '*'){
-        multiply(a,b);
+        return multiply(a,b);
     } else {
-        divide(a,b);
+        return divide(a,b);
     }
 };
 
@@ -78,3 +82,53 @@ const btn9 = document.querySelector('#btn9');
 btn9.addEventListener('click', (e) => {
     append(9);
 });
+const btnplus = document.querySelector('#btnplus');
+btnplus.addEventListener('click', (e) => {
+    append('+');
+});
+const btnsub = document.querySelector('#btnsub');
+btnsub.addEventListener('click', (e) => {
+    append('-');
+});
+const btnmult = document.querySelector('#btnmult');
+btnmult.addEventListener('click', (e) => {
+    append('*');
+});
+const btndiv = document.querySelector('#btndiv');
+btndiv.addEventListener('click', (e) => {
+    append('/');
+});
+const btnclr = document.querySelector('#btnclr');
+btnclr.addEventListener('click', (e) => {
+    running = '';
+    display.textContent = running;
+});
+const btneq = document.querySelector('#btneq');
+btneq.addEventListener('click', (e) => {
+    var result = evaluate(running);
+    display.textContent = result;
+    running = '';
+});
+
+function evaluate(string){
+    var pos = string.indexOf('+');
+    var op = '+';
+    if (pos == -1) {
+        pos = string.indexOf('-');
+        op = '-'
+    }
+    if (pos == -1) {
+        pos = string.indexOf('*');
+        op = '*';
+    }
+    if (pos == -1) {
+        pos = string.indexOf('/');
+        op = '/';
+    }
+    if (pos == -1) {
+        return parseInt(string);
+    }
+    var left = evaluate(string.substring(0,pos));
+    var right = evaluate(string.substring(pos+1,string.length+1));
+    return operate(left, right, op);
+}
