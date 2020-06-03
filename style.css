@@ -120,3 +120,9 @@ body {
     background-color: #d1cecd;
     position: absolute;
 }
+.num:hover {
+    background-color: #6dd1ce;
+}
+.op:hover {
+    background-color: #d695e8;
+}
