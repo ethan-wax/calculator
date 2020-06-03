@@ -10,7 +10,14 @@ body {
 }
 #display {
     background-color: #d4d0cf;
-    width: 400px;
+    width: 295px;
+    height: 100px;
+    margin: 50px 155px;
+    position: absolute;
+}
+#btnclr {
+    background-color: #d4d0cf;
+    width: 85px;
     height: 100px;
     margin: 50px 50px;
     position: absolute;
