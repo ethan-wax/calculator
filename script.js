@@ -106,8 +106,8 @@ btnclr.addEventListener('click', (e) => {
 const btneq = document.querySelector('#btneq');
 btneq.addEventListener('click', (e) => {
     var result = evaluate(running);
+        running = '';
     display.textContent = result;
-    running = '';
 });
 
 function evaluate(string){
