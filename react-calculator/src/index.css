@@ -1,13 +1,128 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    background-color: #74ddfc;
+    text-align: center;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#maincalc {
+    background-color: #ed544a;
+    width: 500px;
+    height: 700px;
+    margin: 50px auto;
+}
+#display {
+    background-color: #d4d0cf;
+    width: 295px;
+    height: 100px;
+    margin: 50px 155px;
+    position: absolute;
+}
+#btnclr {
+    background-color: #d4d0cf;
+    width: 85px;
+    height: 100px;
+    margin: 50px 50px;
+    position: absolute;
+}
+#btn0 {
+    width: 190px;
+    height: 100px;
+    margin-left: 50px;
+    margin-top: 550px;
+}
+#btneq {
+    width: 85px;
+    height: 100px;
+    margin-left: 260px;
+    margin-top: 550px;
+}
+#btnplus {
+    width: 85px;
+    height: 100px;
+    margin-left: 365px;
+    margin-top: 550px;
+}
+#btn1 {
+    width: 85px;
+    height: 100px;
+    margin-left: 50px;
+    margin-top: 425px;
+}
+#btn4 {
+    width: 85px;
+    height: 100px;
+    margin-left: 50px;
+    margin-top: 300px;
+}
+#btn7 {
+    width: 85px;
+    height: 100px;
+    margin-left: 50px;
+    margin-top: 175px;
+}
+#btn2 {
+    width: 85px;
+    height: 100px;
+    margin-left: 155px;
+    margin-top: 425px;
+}
+#btn3 {
+    width: 85px;
+    height: 100px;
+    margin-left: 260px;
+    margin-top: 425px;
+}
+#btnsub {
+    width: 85px;
+    height: 100px;
+    margin-left: 365px;
+    margin-top: 425px;
+}
+#btnmult {
+    width: 85px;
+    height: 100px;
+    margin-left: 365px;
+    margin-top: 300px;
+}
+#btndiv {
+    width: 85px;
+    height: 100px;
+    margin-left: 365px;
+    margin-top: 175px;
+}
+#btn6 {
+    width: 85px;
+    height: 100px;
+    margin-left: 260px;
+    margin-top: 300px;
+}
+#btn9 {
+    width: 85px;
+    height: 100px;
+    margin-left: 260px;
+    margin-top: 175px;
+}
+#btn5 {
+    width: 85px;
+    height: 100px;
+    margin-left: 155px;
+    margin-top: 300px;
+}
+#btn8 {
+    width: 85px;
+    height: 100px;
+    margin-left: 155px;
+    margin-top: 175px;
+}
+.num {
+    background-color: #f5f1f0;
+    position: absolute;
+}
+.op {
+    background-color: #d1cecd;
+    position: absolute;
+}
+.num:hover {
+    background-color: #6dd1ce;
+}
+.op:hover {
+    background-color: #d695e8;
 }

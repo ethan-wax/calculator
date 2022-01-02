@@ -1,17 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+class Button extends React.Component {
+  render(props) {
+    return <div id={'btn' + this.props.value} className={this.props.class}>
+      <h2>{this.props.value}</h2>
+    </div>;
+  }
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+class Display extends React.Component {
+  render(props) {
+    return <div id="display">
+      <h1>{this.props.value}</h1>
+    </div>
+  };
+}
+
+class Caluclator extends React.Component {
+  render() {
+    return <div id="maincalc">
+      <Display value='69' />
+      <Button value='0' class='num' />
+      <Button value='1' class='num' />
+      <Button value='2' class='num' />
+      <Button value='3' class='num' />
+      <Button value='4' class='num' />
+      <Button value='5' class='num' />
+      <Button value='6' class='num' />
+      <Button value='7' class='num' />
+      <Button value='8' class='num' />
+      <Button value='9' class='num' />
+    </div>;
+  }
+}
+
+
+ReactDOM.render(<Caluclator />, document.getElementById('root'));
