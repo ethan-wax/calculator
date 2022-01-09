@@ -38,7 +38,9 @@ class Button extends React.Component {
   render(props) {
     const sym = this.props.value;
     const text = getText(sym);
-    return <div id={'btn' + text} className={isOp(sym) ? 'op' : 'num'}>
+    return <div id={'btn' + text}
+      className={isOp(sym) ? 'op' : 'num'}
+      onClick={() => console.log(text)}>
       <h2>{this.props.value}</h2>
     </div>;
   }
