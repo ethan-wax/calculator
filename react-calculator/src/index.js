@@ -34,13 +34,29 @@ function isOp(sym) {
   return (sym === '+' || sym === '-' || sym === '*' || sym === '*' || sym === '/' || sym === '=' || sym === 'C')
 }
 
+function add(a, b) {
+  return a + b;
+}
+
+function mult(a, b) {
+  return a * b;
+}
+
+function div(a, b) {
+  return b === '0' ? 'Error: Divide by Zero' : parseInt(a / b);
+}
+
+function sub(a, b) {
+  return a - b
+}
+
 class Button extends React.Component {
   render(props) {
     const sym = this.props.value;
     const text = getText(sym);
     return <div id={'btn' + text}
       className={isOp(sym) ? 'op' : 'num'}
-      onClick={() => console.log(text)}>
+      onClick={() => this.props.onClick()}>
       <h2>{this.props.value}</h2>
     </div>;
   }
@@ -55,25 +71,47 @@ class Display extends React.Component {
 }
 
 class Caluclator extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: ''
+    };
+  }
+
+
+  // This function doesn't handle clearing or equals, but all other buttons
+  handleBtnClick(i) {
+    const current = this.state.value;
+    this.setState({ value: current + i });
+  }
+
+  handleClear() {
+    this.setState({ value: '' });
+  }
+
+  renderButton(i) {
+    return <Button value={i} onClick={() => this.handleBtnClick(i)} />
+  }
+
   render() {
     return <div id="maincalc">
-      <Display value='69' />
-      <Button value='0' />
-      <Button value='1' />
-      <Button value='2' />
-      <Button value='3' />
-      <Button value='4' />
-      <Button value='5' />
-      <Button value='6' />
-      <Button value='7' />
-      <Button value='8' />
-      <Button value='9' />
-      <Button value='+' />
-      <Button value='-' />
-      <Button value='/' />
-      <Button value='*' />
+      <Display value={this.state.value} />
+      {this.renderButton(0)}
+      {this.renderButton(1)}
+      {this.renderButton(2)}
+      {this.renderButton(3)}
+      {this.renderButton(4)}
+      {this.renderButton(5)}
+      {this.renderButton(6)}
+      {this.renderButton(7)}
+      {this.renderButton(8)}
+      {this.renderButton(9)}
+      {this.renderButton('+')}
+      {this.renderButton('-')}
+      {this.renderButton('*')}
+      {this.renderButton('/')}
       <Button value='=' />
-      <Button value='C' />
+      <Button value='C' onClick={() => this.handleClear()} />
     </div>;
   }
 }
